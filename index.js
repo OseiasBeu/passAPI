@@ -28,7 +28,7 @@ app.post('/cadastro', (req, res) => {
 
     req.db.collection('cadastro').save(req.body, (err, data) => {
         if (!err)
-            res.status(200).json({"resp":"Ok"});
+            res.status(200).json({"Dados inseridos!");
         else
             res.status(500).json({ "LALA": "LALA" })
     })
@@ -63,15 +63,27 @@ app.get('/login', function (req, res) {
     });
 });
 
-app.post('/login', function (req, res) {
-    req.db.collection('login').insert(req.body, function (erro, dados) {
-        if (erro) {
-            res.status(500).send('Um erro ocorreu!');
-            return;
-        }
-        res.send('Dados inseridos!');
-    });
+app.post('/cadastro', (req, res) => {
+
+    req.db.collection('cadastro').save(req.body, (err, data) => {
+        if (!err)
+            res.status(200).json({"Dados inseridos!");
+        else
+            res.status(500).json({ "LALA": "LALA" })
+    })
+
+
 });
+
+// app.post('/login', function (req, res) {
+//     req.db.collection('login').insert(req.body, function (erro, dados) {
+//         if (erro) {
+//             res.status(500).send('Um erro ocorreu!');
+//             return;
+//         }
+//         res.send('Dados inseridos!');
+//     });
+// });
 
 // ==============================FIM DOS MÉTODOS===============================
 
